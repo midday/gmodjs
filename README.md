@@ -8,14 +8,14 @@ npm install -g gmodjs
 
 ### GmodJS 对 TmodJS 的修改
 
-- 修复同一页面引入多个**预编译模板 js **后的模板覆盖问题
-- 模板全局变量由 **template** 修改为 **gomeTemplate**，使用时语法参考：
+- 修复同一页面引入多个`预编译模板 js `后的模板覆盖问题
+- 模板全局变量由 `template` 修改为 `gomeTemplate`，使用时语法参考：
 ```
 gomeTemplate('tpl-name', data);
 ```
-- 命令操作由 **tmod** 修改为 **gmod**
-- 模板跟目录的配置文件由 **package.json** 修改为 **gmodjs-config.json**
-- **gmodjs-config.json** 格式参考：
+- 命令操作由 `tmod` 修改为 `gmod`
+- 模板跟目录的配置文件由 `package.json` 修改为 `gmodjs-config.json`
+- `gmodjs-config.json` 格式参考：
 ````
 {
     "name": "template",

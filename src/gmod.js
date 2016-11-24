@@ -6,7 +6,7 @@
 
 'use strict';
 
-var version = require('../pacakge.json').version;
+var version = require('../package.json').version;
 var AOTcompile = require('./AOTcompile.js');
 var defaults = require('./defaults.js');
 var runtime = require('./runtime.js');
@@ -181,7 +181,7 @@ var Tmod = function (base, options) {
 
 
 // 默认配置
-// 用户配置将保存到模板根目录 gmodjs.json 文件中
+// 用户配置将保存到模板根目录 gmodjs-config.json 文件中
 Tmod.defaults = defaults;
 
 
@@ -199,7 +199,7 @@ Tmod.prototype = {
             return this.options;
         }
 
-        var file = path.join(this.base, 'gmodjs.json');
+        var file = path.join(this.base, 'gmodjs-config.json');
 
         var defaults = Tmod.defaults;
         var json = null;
@@ -207,7 +207,7 @@ Tmod.prototype = {
         var config = {};
 
 
-        // 读取目录中 gmodjs.json
+        // 读取目录中 gmodjs-config.json
         if (fs.existsSync(file)) {
             var fileContent = fs.readFileSync(file, 'utf-8');
 
@@ -230,7 +230,7 @@ Tmod.prototype = {
 
         }
 
-        //有些项目的gmodjs.json里只有devDependencies而没有dependencies
+        //有些项目的gmodjs-config.json里只有devDependencies而没有dependencies
         //那么下面的replace那行代码就会出现can't read property 'gmodjs' of undefined的错误
         //这里添加容错逻辑
 
@@ -264,7 +264,7 @@ Tmod.prototype = {
         }
 
 
-        // 来自 gmodjs.json 文件
+        // 来自 gmodjs-config.json 文件
         for (name in json['gmodjs-config']) {
             config[name] = json['gmodjs-config'][name];
         }
@@ -281,7 +281,7 @@ Tmod.prototype = {
         config = this._fixConfig(config, defaults, json['gmodjs-config'], options);
 
         json['gmodjs-config'] = config;
-        this['gmodjs.json'] = json;
+        this['gmodjs-config.json'] = json;
         this.projectVersion = json.version;
 
         return config;
@@ -294,9 +294,9 @@ Tmod.prototype = {
      */
     saveConfig: function () {
 
-        var file = path.join(this.base, 'gmodjs.json');
+        var file = path.join(this.base, 'gmodjs-config.json');
         var configName = 'gmodjs-config';
-        var json = this['gmodjs.json'];
+        var json = this['gmodjs-config.json'];
 
         var options = json[configName];
         var userConfigList = Object.keys(Tmod.defaults);
@@ -892,7 +892,7 @@ Tmod.prototype = {
         }
 
 
-        var newMd5 = this._getMd5(source + JSON.stringify(this['gmodjs.json']));
+        var newMd5 = this._getMd5(source + JSON.stringify(this['gmodjs-config.json']));
 
         // 如果开启了合并，编译后的文件使用缓存目录保存
         if (isCacheDir) {

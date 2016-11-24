@@ -2,7 +2,7 @@
     "name": "template",
     "version": "1.0.0",
     "dependencies": {
-        "gmodjs": "1.0.0"
+        "gmodjs": "2.0.1"
     },
     "gmodjs-config": {
         "output": "../build",

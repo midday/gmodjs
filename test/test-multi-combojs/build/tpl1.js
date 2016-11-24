@@ -1,4 +1,4 @@
-/*TMODJS:{"version":"1.0.4"}*/
+/*TMODJS:{"version":"1.0.0"}*/
 ;(function () {
     if(!this.gomeTemplate){
         function template (filename, content) {
@@ -176,7 +176,7 @@
 
     if (typeof define === 'function') {define(function() {return template;});} else if (typeof exports !== 'undefined') {module.exports = template;}
     
-    /*v:2*/
+    /*v:1*/
 gomeTemplate('tpl1',function($data,$filename
 /**/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$escape=$utils.$escape,title=$data.title,$each=$utils.$each,list=$data.list,value=$data.value,i=$data.i,$out='';$out+='<h1>';

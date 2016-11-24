@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test-without-seajs</title>
+</head>
+
+<body>
+    <div id="content1"></div>
+    <div id="content2"></div>
+    <script src="../js/sea.js"></script>
+    <script>
+    var data = {
+        title: '标签',
+        list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+    };
+    seajs.use('./build/tpl1.js', function(gomeTemplate) {
+        var dom1 = gomeTemplate('tpl1', data);
+        document.getElementById('content1').innerHTML = dom1;
+    });
+    seajs.use('./build/tpl2.js', function(gomeTemplate) {
+        var dom2 = gomeTemplate('tpl2', data);
+        document.getElementById('content2').innerHTML = dom2;
+    });
+    </script>
+</body>
+
+</html>

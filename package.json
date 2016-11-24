@@ -1,0 +1,37 @@
+{
+    "name": "gmodjs",
+    "version": "1.0.0",
+    "readmeFilename": "README.md",
+    "description": "Template Compiler",
+    "homepage": "https://github.com/midday/gmodjs",
+    "keywords": [
+        "template",
+        "artTemplate",
+        "TemplateJS",
+        "CommonJS",
+        "RequireJS",
+        "SeaJS",
+        "AMD",
+        "CMD"
+    ],
+    "author": "midday",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/midday/gmodjs.git"
+    },
+    "main": "./src/gmod.js",
+    "bin": {
+        "gmod": "./bin/gmod",
+        "gmodjs": "./bin/gmod"
+    },
+    "scripts": {
+        "test": "gmod ./test/tpl",
+        "test2": "gmod ./test/test-all/*"
+    },
+    "dependencies": {
+        "art-template": "3.0.x",
+        "uglify-js": "2.4.0",
+        "semver": "2.3.0"
+    },
+    "license": "MIT"
+}

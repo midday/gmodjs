@@ -14,7 +14,7 @@ npm install -g gmodjs
 gomeTemplate('tpl-name', data);
 ```
 - 命令操作由 `tmod` 修改为 `gmod`
-- 模板跟目录的配置文件由 `package.json` 修改为 `gmodjs-config.json`
+- 模板根目录的配置文件由 `package.json` 修改为 `gmodjs-config.json`
 - `gmodjs-config.json` 格式参考：
 ````
 {
@@ -39,7 +39,9 @@ gomeTemplate('tpl-name', data);
     }
 }
 ````
-
+- 此次修改测试用例参考如下
+    - 带有seajs用法：`test/test-mutil-combojs/test-with-seajs.html`
+    - 不带有seajs用法：`test/test-mutil-combojs/test-without-seajs.html`
 
 ### ================**TmodJS 介绍如下**================
 # TmodJS

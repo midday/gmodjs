@@ -39,9 +39,9 @@ gomeTemplate('tpl-name', data);
     }
 }
 ````
-- 此次修改测试用例参考如下
-    - 带有seajs用法：`test/test-mutil-combojs/test-with-seajs.html`
-    - 不带有seajs用法：`test/test-mutil-combojs/test-without-seajs.html`
+- 此次功能修改测试用例
+    - 带seajs用法：`test/test-mutil-combojs/test-with-seajs.html`
+    - 不带seajs用法：`test/test-mutil-combojs/test-without-seajs.html`
 
 ### ================**TmodJS 介绍如下**================
 # TmodJS
